@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookHive.DataAccess", "Bulky.DataAccess\BookHive.DataAccess.csproj", "{A874629D-AC7B-4848-8E70-404907E62B9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookHive.DataAccess", "BookHive.DataAccess\BookHive.DataAccess.csproj", "{A874629D-AC7B-4848-8E70-404907E62B9A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookHive.Models", "Bulky.Models\BookHive.Models.csproj", "{C28D3419-561C-4081-B3B2-465314450122}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookHive.Models", "BookHive.Models\BookHive.Models.csproj", "{C28D3419-561C-4081-B3B2-465314450122}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookHive.Utility", "Bulky.Utility\BookHive.Utility.csproj", "{6F12F6A7-BA5B-45AA-8062-CC8825A30F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookHive.Utility", "BookHive.Utility\BookHive.Utility.csproj", "{6F12F6A7-BA5B-45AA-8062-CC8825A30F0C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookHiveWeb", "BulkyWeb\BookHiveWeb.csproj", "{6093B298-5105-4FB6-A744-61AA027CC472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookHiveWeb", "BookHiveWeb\BookHiveWeb.csproj", "{6093B298-5105-4FB6-A744-61AA027CC472}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
