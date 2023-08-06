@@ -1,11 +1,15 @@
-﻿using Bulky.DataAccess.Data;
-using Bulky.DataAccess.Repository.IRepository;
-using Bulky.Models;
+﻿using BookHive.DataAccess.Data;
+using BookHive.DataAccess.Repository.IRepository;
+using BookHive.Models;
+using BookHive.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
-namespace BulkyWeb.Areas.Admin.Controllers
+namespace BookHiveWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)] //only allow access to admins
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

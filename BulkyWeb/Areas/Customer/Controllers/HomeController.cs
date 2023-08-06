@@ -1,9 +1,9 @@
-﻿using Bulky.DataAccess.Repository.IRepository;
-using Bulky.Models;
+﻿using BookHive.DataAccess.Repository.IRepository;
+using BookHive.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace BulkyWeb.Areas.Customer.Controllers
+namespace BookHiveWeb.Areas.Customer.Controllers
 {
     [Area("Customer")]
     public class HomeController : Controller

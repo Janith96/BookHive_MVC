@@ -1,8 +1,10 @@
-using Bulky.DataAccess.Data;
-using Bulky.DataAccess.Repository;
-using Bulky.DataAccess.Repository.IRepository;
+using BookHive.DataAccess.Data;
+using BookHive.DataAccess.Repository;
+using BookHive.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using BookHive.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +15,19 @@ builder.Services.AddDbContext<ApplicationDbContext>
     (builder.Configuration.GetConnectionString("DefaultConnection"), op =>
         op.CommandTimeout(60)));
 
-builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
+//making the identity page redirects work (if this is not done when a razor page try to redirect the redirect wont work)
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = $"/Identity/Account/Login";
+    options.LoginPath = $"/Identity/Account/Logout";
+    options.LoginPath = $"/Identity/Account/AccessDenied";
+});
+
+builder.Services.AddRazorPages(); //for identity razor pages support
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 
@@ -34,6 +47,8 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.MapRazorPages(); //for identity razor pages routing
 
 app.MapControllerRoute(
     name: "default",
