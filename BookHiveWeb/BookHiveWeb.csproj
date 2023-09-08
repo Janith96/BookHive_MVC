@@ -19,7 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bulky.DataAccess\BookHive.DataAccess.csproj" />
+    <ProjectReference Include="..\BookHive.DataAccess\BookHive.DataAccess.csproj" />
+    <ProjectReference Include="..\BookHive.Models\BookHive.Models.csproj" />
+    <ProjectReference Include="..\BookHive.Utility\BookHive.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
