@@ -29,6 +29,38 @@ namespace BookHive.DataAccess.Data
                 new Category { Id =3, Name = "History", DisplayOrder = 3}
                 );
 
+            modelBuilder.Entity<Company>().HasData(
+                new Company
+                {
+                    Id = 1,
+                    Name = "Gunasena Books",
+                    StreetAddress = "100A, Nugegoda",
+                    City = "Colombo",
+                    PostalCode = "10000",
+                    State = "WP",
+                    PhoneNumber = "0766476842"
+                },
+                new Company
+                {
+                    Id = 2,
+                    Name = "Araliya Books",
+                    StreetAddress = "206A, Hidellana",
+                    City = "Ratnapura",
+                    PostalCode = "72000",
+                    State = "SG",
+                    PhoneNumber = "0766473642"
+                },
+                new Company
+                {
+                    Id = 3,
+                    Name = "Atlas Books",
+                    StreetAddress = "99 Nilminipura",
+                    City = "Maharagama",
+                    PostalCode = "45202",
+                    State = "WP",
+                    PhoneNumber = "0766475982"
+                });
+
             modelBuilder.Entity<Product>().HasData(
                 new Product
                 {

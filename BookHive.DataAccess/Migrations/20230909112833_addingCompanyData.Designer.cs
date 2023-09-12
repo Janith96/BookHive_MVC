@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookHive.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230730073403_AddCompanyTableToDB")]
-    partial class AddCompanyTableToDB
+    [Migration("20230909112833_addingCompanyData")]
+    partial class addingCompanyData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace BookHive.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Bulky.Models.Category", b =>
+            modelBuilder.Entity("BookHive.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -66,7 +66,7 @@ namespace BookHive.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Bulky.Models.Company", b =>
+            modelBuilder.Entity("BookHive.Models.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,9 +96,41 @@ namespace BookHive.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            City = "Colombo",
+                            Name = "Gunasena Books",
+                            PhoneNumber = "0766476842",
+                            PostalCode = "10000",
+                            State = "WP",
+                            StreetAddress = "100A, Nugegoda"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            City = "Ratnapura",
+                            Name = "Araliya Books",
+                            PhoneNumber = "0766473642",
+                            PostalCode = "72000",
+                            State = "SG",
+                            StreetAddress = "206A, Hidellana"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            City = "Maharagama",
+                            Name = "Atlas Books",
+                            PhoneNumber = "0766475982",
+                            PostalCode = "45202",
+                            State = "WP",
+                            StreetAddress = "99 Nilminipura"
+                        });
                 });
 
-            modelBuilder.Entity("Bulky.Models.Product", b =>
+            modelBuilder.Entity("BookHive.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -440,7 +472,7 @@ namespace BookHive.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Bulky.Models.ApplicationUser", b =>
+            modelBuilder.Entity("BookHive.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -463,9 +495,9 @@ namespace BookHive.DataAccess.Migrations
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
-            modelBuilder.Entity("Bulky.Models.Product", b =>
+            modelBuilder.Entity("BookHive.Models.Product", b =>
                 {
-                    b.HasOne("Bulky.Models.Category", "Category")
+                    b.HasOne("BookHive.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)

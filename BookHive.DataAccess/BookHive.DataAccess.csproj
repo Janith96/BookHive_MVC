@@ -18,12 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookHive.Models\BookHive.Models.csproj" />
-    <ProjectReference Include="..\Bulky.Models\BookHive.Models.csproj" />
-    <ProjectReference Include="..\Bulky.Utility\BookHive.Utility.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\BookHive.Utility\BookHive.Utility.csproj" />
   </ItemGroup>
 
 </Project>

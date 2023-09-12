@@ -9,7 +9,7 @@ using System.Data;
 namespace BookHiveWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = SD.Role_Admin)] //only allow access to admins
+    //[Authorize(Roles = SD.Role_Admin)] //only allow access to admins
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
